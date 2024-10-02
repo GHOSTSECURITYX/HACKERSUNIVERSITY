@@ -18,13 +18,12 @@
             color: white;
             text-align: center;
             padding: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
         }
         .logo {
             height: 50px;
             width: auto;
+            display: block;
+            margin: 0 auto; /* Center the logo */
         }
         nav {
             background-color: #252525;
@@ -66,27 +65,13 @@
         }
         h1, h2 {
             color: #4CAF50;
+            margin: 0; /* Remove default margins */
+        }
+        h2 {
+            margin-top: 0.5rem; /* Space between H1 and H2 */
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="logo.png" alt="Logo" class="logo">
-        <h1>HACKERS UNIVERSITY</h1>
-        <h1>PRESENTED BY GHOSTSECURITY</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#courses">Courses</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-    <div class="container">
-        <h2>Welcome to Your Cybersecurity Training Platform</h2>
-        <p>Learn cybersecurity through hands-on experience and real-world scenarios.</p>
-        <a href="#" class="cta-button">Get Started</a>
-    </div>
-</body>
-</html>
+        <img src="logo.png" al
