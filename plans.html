@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plans - HACKERS UNIVERSITY</title>
+    <title>Pricing & Plans - HACKERS UNIVERSITY</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,7 +12,6 @@
             background-color: #0a0e17;
             color: #ffffff;
         }
-
         header {
             background-color: #0a0e17;
             padding: 1rem 5%;
@@ -20,19 +19,16 @@
             justify-content: space-between;
             align-items: center;
         }
-
         nav ul {
             list-style-type: none;
             display: flex;
             gap: 20px;
         }
-
         nav ul li a {
             color: #a0a0a0;
             text-decoration: none;
             font-size: 14px;
         }
-
         .cta-button {
             background-color: #8cc63f;
             color: #000000;
@@ -41,72 +37,91 @@
             border-radius: 5px;
             font-weight: bold;
         }
-
-        .hero {
+        .pricing-section {
             padding: 5% 5% 10%;
-            background: linear-gradient(to right, #0a0e17, #1a2030);
             text-align: center;
         }
-
-        .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: #a0a0a0;
+        .pricing-section h1 {
+            font-size: 3rem;
             margin-bottom: 2rem;
-            max-width: 600px;
-            margin: 0 auto;
         }
-
-        .button-group {
+        .billing-toggle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        .toggle-switch {
+            width: 60px;
+            height: 30px;
+            background-color: #8cc63f;
+            border-radius: 15px;
+            margin: 0 10px;
+            position: relative;
+            cursor: pointer;
+        }
+        .toggle-switch::after {
+            content: '';
+            position: absolute;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background-color: white;
+            top: 2px;
+            left: 2px;
+            transition: 0.3s;
+        }
+        .pricing-plans {
             display: flex;
             justify-content: center;
             gap: 20px;
+            flex-wrap: wrap;
         }
-
-        .secondary-button {
-            background-color: #2a3040;
-            color: #ffffff;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-
-        .trial-banner {
+        .plan {
             background-color: #1a2030;
-            color: #8cc63f;
-            padding: 10px;
-            text-align: center;
-            font-size: 14px;
+            border-radius: 10px;
+            padding: 30px;
+            width: 250px;
+            text-align: left;
         }
-
-        .center-content {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            height: 100vh; /* Adjust based on the size of the section */
-        }
-
-        .center-content h1 {
-            font-size: 3rem;
+        .plan h2 {
+            font-size: 1.5rem;
             margin-bottom: 1rem;
         }
-
-        .center-content p {
-            font-size: 1.2rem;
-            color: #a0a0a0;
-            max-width: 600px;
+        .plan-price {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        .plan-features {
+            list-style-type: none;
+            padding: 0;
+        }
+        .plan-features li {
+            margin-bottom: 10px;
+        }
+        .plan-features li::before {
+            content: '✓';
+            color: #8cc63f;
+            margin-right: 10px;
+        }
+        .plan-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            background-color: #8cc63f;
+            color: #000000;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="logos/logo.png" height="80" width="80">
+        <img src="logos/logo.png" height="80" width="80" alt="Hackers University Logo">
         <nav>
             <ul>
                 <li><a href="#products">Products</a></li>
@@ -118,14 +133,40 @@
         </nav>
         <a href="#" class="cta-button">Get Started</a>
     </header>
-
     <main>
-        <div class="center-content">
-            <h1>About Hackers University</h1>
-            <p>Learn more about our mission, courses, and ethical hacking principles.</p>
-        </div>
+        <section class="pricing-section">
+            <h1>Pricing & Plans</h1>
+            <div class="billing-toggle">
+                <span>Monthly Billing</span>
+                <div class="toggle-switch"></div>
+                <span>Annual Billing</span>
+            </div>
+            <div class="pricing-plans">
+                <div class="plan">
+                    <h2>LITE</h2>
+                    <p>All the basics you need to create and upskill a threat-ready cyber team.</p>
+                    <div class="plan-price">$250<span>/seat per month</span></div>
+                    <a href="#" class="plan-button">14-DAY FREE TRIAL</a>
+                    <ul class="plan-features">
+                        <li>Core HTB Academy courses</li>
+                        <li>1x CTF event (24h)</li>
+                        <li>300+ recommended scenarios</li>
+                    </ul>
+                </div>
+                <div class="plan">
+                    <h2>BASE</h2>
+                    <p>Expand your lab access to excel in offensive and defensive cyber operations.</p>
+                    <div class="plan-price">Talk to Sales</div>
+                    <a href="#" class="plan-button">BOOK A DEMO</a>
+                    <ul class="plan-features">
+                        <li>Core & specialized HTB Academy courses</li>
+                        <li>Certification vouchers</li>
+                    </ul>
+                </div>
+                <!-- Add PROFESSIONAL and ULTIMATE plans similarly -->
+            </div>
+        </section>
     </main>
-
     <footer>
         <!-- Add footer content -->
     </footer>
