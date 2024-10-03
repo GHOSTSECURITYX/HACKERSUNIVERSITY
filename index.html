@@ -76,11 +76,22 @@
             border-radius: 5px;
         }
         .trial-banner {
-            background-color: #1a2030;
-            color: #8cc63f;
-            padding: 10px;
+            display: block;
+            width: 100%;
+            padding: 15px 0;
+            background-color: #1a2030;  /* Original background color */
+            color: #8cc63f;  /* Original text color */
             text-align: center;
-            font-size: 14px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .trial-banner:hover {
+            background-color: #2a3040;  
         }
 
         @media screen and (max-width: 768px) {
