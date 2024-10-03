@@ -76,22 +76,33 @@
             border-radius: 5px;
         }
         .trial-banner {
-            display: block;
-            width: 100%;
-            padding: 15px 0;
             background-color: #1a2030;
-            color: #8cc63f; 
+            color: #8cc63f;
+            padding: 10px;
             text-align: center;
+            font-size: 14px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .trial-banner-text {
+            margin-right: 15px;
+        }
+
+        .trial-button {
+            background-color: #8cc63f;
+            color: #000000;
+            padding: 8px 15px;
             text-decoration: none;
+            border-radius: 5px;
             font-weight: bold;
-            font-size: 16px;
-            border: none;
-            cursor: pointer;
+            font-size: 12px;
             transition: background-color 0.3s ease;
         }
 
-        .trial-banner:hover {
-            background-color: #2a3040;  
+        .trial-button:hover {
+            background-color: #78a836;
         }
 
         @media screen and (max-width: 768px) {
@@ -184,7 +195,8 @@
         </section>
     </main>
     <div class="trial-banner">
-    <a href="free-trial.html">Try it for free now &rarr;</a>
+        <span class="trial-banner-text">Try it for free now</span>
+        <a href="#" class="trial-button">Start Trial</a>
     </div>
 </body>
 </html>
