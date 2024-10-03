@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <link rel="apple-touch-icon" sizes="180x180" href="favicon_package_v0.16/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon_package_v0.16/favicon-32x32.png">
@@ -82,6 +82,47 @@
             text-align: center;
             font-size: 14px;
         }
+
+        @media screen and (max-width: 768px) {
+          header {
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem 2%;
+          }
+        
+          nav ul {
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-top: 1rem;
+          }
+        
+          .hero {
+            padding: 5% 2%;
+            text-align: center;
+          }
+        
+          .hero h1 {
+            font-size: 2.5rem;
+          }
+        
+          .hero p {
+            font-size: 1rem;
+            margin-left: auto;
+            margin-right: auto;
+          }
+        
+          .button-group {
+            flex-direction: column;
+            align-items: center;
+          }
+        
+          .cta-button, .secondary-button {
+            width: 80%;
+            text-align: center;
+          }
+        }
+           
     </style>
 </head>
 <body>
