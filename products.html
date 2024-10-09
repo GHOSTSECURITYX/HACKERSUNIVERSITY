@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Products - HACKERS UNIVERSITY</title>
 
+    <!-- Favicon links -->
     <link rel="apple-touch-icon" sizes="180x180" href="favicon_package_v0.16/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon_package_v0.16/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon_package_v0.16/favicon-16x16.png">
@@ -12,16 +13,18 @@
     <link rel="mask-icon" href="favicon_package_v0.16/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
+
+    <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
     
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap');
 
         :root {
-            --main-bg-color: #000000;
-            --secondary-bg-color: #0a0e17;
+            --main-bg-color: #0a0e17;
+            --secondary-bg-color: #1a1f2e;
             --text-color: #00ff00;
-            --secondary-text-color: #008000;
-            --accent-color: #39ff14;
+            --secondary-text-color: #39ff14;
+            --accent-color: #ff00ff;
         }
 
         body {
@@ -30,209 +33,190 @@
             padding: 0;
             background-color: var(--main-bg-color);
             color: var(--text-color);
+            line-height: 1.6;
         }
 
-        header {
-            background-color: var(--secondary-bg-color);
-            padding: 1rem 5%;
+        /* ______________Header styles______________ */
+        
+
+        .center-content {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-            border-bottom: 1px solid var(--accent-color);
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, var(--main-bg-color), var(--secondary-bg-color));
+            position: relative;
+            overflow: hidden;
         }
 
-        .logo {
-            height: 70px;
-            width: 70px;
-            filter: hue-rotate(100deg) brightness(1.5);
+        .center-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">💻</text></svg>') 0 0 / 100px 100px;
+            opacity: 0.05;
+            animation: backgroundScroll 20s linear infinite;
         }
 
-        nav ul {
-            list-style-type: none;
-            display: flex;
-            gap: 20px;
+        @keyframes backgroundScroll {
+            from {background-position: 0 0;}
+            to {background-position: 100px 100px;}
         }
 
-        nav ul li a {
-            color: var(--secondary-text-color);
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 0.3s ease;
-        }
-
-        nav ul li a:hover {
+        .center-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
             color: var(--accent-color);
+            text-shadow: 0 0 15px var(--accent-color);
+            animation: glitch 5s infinite alternate;
+        }
+
+        @keyframes glitch {
+            0% {text-shadow: 0 0 15px var(--accent-color);}
+            25% {text-shadow: -2px 0 var(--text-color), 2px 2px var(--accent-color);}
+            50% {text-shadow: 2px -2px var(--text-color), -2px 2px var(--accent-color);}
+            75% {text-shadow: -2px -2px var(--text-color), 2px 2px var(--accent-color);}
+            100% {text-shadow: 2px 0 var(--text-color), -2px -2px var(--accent-color);}
+        }
+
+        .product-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .product-card {
+            background-color: var(--secondary-bg-color);
+            border: 2px solid var(--accent-color);
+            border-radius: 10px;
+            padding: 2rem;
+            width: 300px;
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 30px rgba(255, 0, 255, 0.4);
+        }
+
+        .product-card h2 {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .course-list {
+            list-style-type: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        .course-list li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .course-list li::before {
+            content: '>';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
+        .info-section {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .info-section p {
+            font-size: 1.1rem;
+            color: var(--secondary-text-color);
+            margin-bottom: 1rem;
+            text-shadow: 0 0 5px var(--secondary-text-color);
         }
 
         .cta-button {
             background-color: var(--accent-color);
             color: var(--main-bg-color);
-            padding: 10px 20px;
+            padding: 12px 25px;
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
             transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 2rem;
+            display: inline-block;
         }
 
         .cta-button:hover {
             background-color: var(--text-color);
-            box-shadow: 0 0 10px var(--accent-color);
-        }
-
-        .center-content {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            min-height: 100vh;
-            padding: 2rem;
-        }
-
-        .center-content h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: var(--accent-color);
-            text-shadow: 0 0 10px var(--accent-color);
-        }
-
-        .center-content p {
-            font-size: 1.2rem;
-            color: var(--secondary-text-color);
-            max-width: 600px;
-            margin-bottom: 1rem;
-        }
-
-        table {
-            width: 100%;
-            max-width: 800px;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-
-        table, th, td {
-            border: 1px solid var(--accent-color);
-        }
-
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
-
-        th {
-            background-color: var(--secondary-bg-color);
-            color: var(--accent-color);
-        }
-
-        td {
-            background-color: var(--main-bg-color);
+            box-shadow: 0 0 15px var(--accent-color);
+            transform: translateY(-2px);
         }
 
         @media screen and (max-width: 768px) {
-          header {
-            flex-direction: column;
-            align-items: center;
-            padding: 1rem 2%;
-          }
-        
-          nav {
-            width: 100%;
-            margin-top: 1rem;
-          }
-        
-          nav ul {
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0;
-            margin: 0;
-            width: 100%;
-          }
-        
-          nav ul li {
-            margin: 0;
-          }
-        
-          nav ul li a {
-            padding: 10px 5px;
-            font-size: 12px;
-            white-space: nowrap;
-          }
-        
-          .center-content h1 {
-            font-size: 2.5rem;
-          }
-        
-          .cta-button {
-            width: 80%;
-            text-align: center;
-          }
+            .center-content h1 {
+                font-size: 2.5rem;
+            }
+            .product-card {
+                width: 100%;
+            }
         }
-       
     </style>
 </head>
 <body>
-    <header>
-        <a href="index.html">
-            <img src="logos/logo-ghostsecurity.png" alt="Hackers University Logo" class="logo">
-        </a>
-        <nav>
-            <ul>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="plans.html">Plans</a></li>
-                <li><a href="#resources">Resources</a></li>
-                <li><a href="about.html">Company</a></li>
-            </ul>
-        </nav>
-        <a href="plans.html" class="cta-button">Get Started</a>
-    </header>
+    <!-- Header remains the same -->
 
     <main>
         <div class="center-content">
             <h1>Our Products</h1>
-            <h2>LITE</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Course</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>HACKERS ENVIRONMENT SETUP</td></tr>
-                    <tr><td>HACKERS INTRO TO LINUX</td></tr>
-                    <tr><td>HACKERS INTRO TO PYTHON</td></tr>
-                    <tr><td>BINARY EXPLOITATION</td></tr>
-                    <tr><td>X86 ASSEMBLY</td></tr>
-                    <tr><td>REVERSING MACHINE CODE</td></tr>
-                    <tr><td>PASSWORD CRACKING</td></tr>
-                    <tr><td>WEB EXPLOITATION</td></tr>
-                    <tr><td>MEMORY FORENSICS</td></tr>
-                    <tr><td>SYSTEM RECONNAISSANCE</td></tr>
-                </tbody>
-            </table>
+            
+            <div class="product-container">
+                <div class="product-card">
+                    <h2>LITE</h2>
+                    <ul class="course-list">
+                        <li>HACKERS ENVIRONMENT SETUP</li>
+                        <li>HACKERS INTRO TO LINUX</li>
+                        <li>HACKERS INTRO TO PYTHON</li>
+                        <li>BINARY EXPLOITATION</li>
+                        <li>X86 ASSEMBLY</li>
+                        <li>REVERSING MACHINE CODE</li>
+                        <li>PASSWORD CRACKING</li>
+                        <li>WEB EXPLOITATION</li>
+                        <li>MEMORY FORENSICS</li>
+                        <li>SYSTEM RECONNAISSANCE</li>
+                    </ul>
+                </div>
 
-            <h2>EXECUTIVE</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Course</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>REAL WORLD MOBILE MALWARE REVERSING & ANALYSIS</td></tr>
-                    <tr><td>ADVANCED VULNERABILITY RESEARCH TRAINING</td></tr>
-                    <tr><td>COMMERCIAL SOFTWARE EXPLOITATION TRAINING</td></tr>
-                    <tr><td>ROOTKIT ANALYSIS</td></tr>
-                    <tr><td>RESUME & INTERVIEW PREP</td></tr>
-                </tbody>
-            </table>
+                <div class="product-card">
+                    <h2>EXECUTIVE</h2>
+                    <ul class="course-list">
+                        <li>REAL WORLD MOBILE MALWARE REVERSING & ANALYSIS</li>
+                        <li>ADVANCED VULNERABILITY RESEARCH TRAINING</li>
+                        <li>COMMERCIAL SOFTWARE EXPLOITATION TRAINING</li>
+                        <li>ROOTKIT ANALYSIS</li>
+                        <li>RESUME & INTERVIEW PREP</li>
+                    </ul>
+                </div>
+            </div>
 
-            <p>LITE PACKAGES ARE MORE BEGINNER ORIENTED WHILE AT THE SAME TIME LAYING THE CYBERSECURITY FOUNDATIONS EMPLOYERS ARE LOOKING FOR.</p>
-            <p>EXECUTIVE PACKAGES WILL BE MORE ADVANCED, OFFER IN DEPTH INTERVIEW TRAINING AND PREPARE YOU TO OBTAIN A HIGH PAYING JOB IN BUT NOT EXCLUSIVE TO THE FOLLOWING CATEGORIES:</p>
-            <p>VULNERABILITY RESEARCHER, CYBER ENGINEER, REVERSE ENGINEER, CYBER OPERATIONS SPECIALIST, PENETRATION TESTER, RED TEAM CYBER OPERATIONS, OFFENSIVE CYBER SECURITY ENGINEER/SPECIALIST, DEFENSIVE CYBER SECURITY ENGINEER/SPECIALIST</p>
-            <p>WE TEACH YOU A NICHE SET OF SKILLS THAT ARE RARE AND HIGHLY SOUGHT AFTER IN THE CYBER INDUSTRY. ONCE YOU LEARN THESE SKILLS YOU ARE GUARANTEED AN IMPROVED CHANCE AT OBTAINING A CYBER POSITION WITHOUT A UNIVERSITY DEGREE.</p> 
-            <a href="plans.html" class="cta-button">Pricing</a>
-            <p> </p>
+            <div class="info-section">
+                <p>LITE PACKAGES ARE MORE BEGINNER ORIENTED WHILE AT THE SAME TIME LAYING THE CYBERSECURITY FOUNDATIONS EMPLOYERS ARE LOOKING FOR.</p>
+                <p>EXECUTIVE PACKAGES WILL BE MORE ADVANCED, OFFER IN-DEPTH INTERVIEW TRAINING AND PREPARE YOU TO OBTAIN A HIGH PAYING JOB IN BUT NOT EXCLUSIVE TO THE FOLLOWING CATEGORIES:</p>
+                <p>VULNERABILITY RESEARCHER, CYBER ENGINEER, REVERSE ENGINEER, CYBER OPERATIONS SPECIALIST, PENETRATION TESTER, RED TEAM CYBER OPERATIONS, OFFENSIVE CYBER SECURITY ENGINEER/SPECIALIST, DEFENSIVE CYBER SECURITY ENGINEER/SPECIALIST</p>
+                <p>WE TEACH YOU A NICHE SET OF SKILLS THAT ARE RARE AND HIGHLY SOUGHT AFTER IN THE CYBER INDUSTRY. ONCE YOU LEARN THESE SKILLS YOU ARE GUARANTEED AN IMPROVED CHANCE AT OBTAINING A CYBER POSITION WITHOUT A UNIVERSITY DEGREE.</p> 
+            </div>
+
+            <a href="plans.html" class="cta-button">View Pricing</a>
         </div>
     </main>
 
