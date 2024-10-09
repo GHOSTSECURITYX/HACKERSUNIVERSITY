@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pricing & Plans - HACKERS UNIVERSITY</title>
 
+    <!-- Favicon links -->
     <link rel="apple-touch-icon" sizes="180x180" href="favicon_package_v0.16/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon_package_v0.16/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon_package_v0.16/favicon-16x16.png">
@@ -12,16 +13,16 @@
     <link rel="mask-icon" href="favicon_package_v0.16/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-    
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap');
 
         :root {
-            --main-bg-color: #000000;
-            --secondary-bg-color: #0a0e17;
+            --main-bg-color: #0a0e17;
+            --secondary-bg-color: #1a1f2e;
             --text-color: #00ff00;
-            --secondary-text-color: #008000;
-            --accent-color: #39ff14;
+            --secondary-text-color: #39ff14;
+            --accent-color: #ff00ff;
         }
 
         body {
@@ -30,222 +31,246 @@
             padding: 0;
             background-color: var(--main-bg-color);
             color: var(--text-color);
+            line-height: 1.6;
         }
+
         header {
             background-color: var(--secondary-bg-color);
             padding: 1rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid var(--accent-color);
+            border-bottom: 2px solid var(--accent-color);
+            box-shadow: 0 2px 10px rgba(255, 0, 255, 0.3);
         }
+
         .logo {
-            height: 70px;
-            width: 70px;
-            filter: hue-rotate(100deg) brightness(1.5);
+            height: 50px;
+            width: auto;
+            filter: drop-shadow(0 0 5px var(--accent-color));
         }
+
         nav ul {
             list-style-type: none;
             display: flex;
-            gap: 20px;
+            gap: 30px;
         }
+
         nav ul li a {
             color: var(--secondary-text-color);
             text-decoration: none;
-            font-size: 14px;
-            transition: color 0.3s ease;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            position: relative;
         }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
         nav ul li a:hover {
             color: var(--accent-color);
+            text-shadow: 0 0 5px var(--accent-color);
         }
+
         .cta-button {
             background-color: var(--accent-color);
             color: var(--main-bg-color);
-            padding: 10px 20px;
+            padding: 12px 25px;
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
             transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
+
         .cta-button:hover {
             background-color: var(--text-color);
-            box-shadow: 0 0 10px var(--accent-color);
+            box-shadow: 0 0 15px var(--accent-color);
+            transform: translateY(-2px);
         }
-        .pricing-section {
-            padding: 5% 5% 10%;
+
+        main {
+            padding: 2rem 5%;
+        }
+
+        h1 {
+            font-size: 3.5rem;
             text-align: center;
-        }
-        .pricing-section h1 {
-            font-size: 3rem;
-            margin-bottom: 2rem;
             color: var(--accent-color);
-            text-shadow: 0 0 10px var(--accent-color);
+            text-shadow: 0 0 15px var(--accent-color);
+            animation: glitch 5s infinite alternate;
         }
+
+        @keyframes glitch {
+            0% {text-shadow: 0 0 15px var(--accent-color);}
+            25% {text-shadow: -2px 0 var(--text-color), 2px 2px var(--accent-color);}
+            50% {text-shadow: 2px -2px var(--text-color), -2px 2px var(--accent-color);}
+            75% {text-shadow: -2px -2px var(--text-color), 2px 2px var(--accent-color);}
+            100% {text-shadow: 2px 0 var(--text-color), -2px -2px var(--accent-color);}
+        }
+
         .billing-toggle {
             display: flex;
             justify-content: center;
             align-items: center;
             margin-bottom: 2rem;
-            color: var(--secondary-text-color);
-        }
-        .toggle-switch {
-            width: 60px;
-            height: 30px;
-            background-color: var(--secondary-bg-color);
-            border: 2px solid var(--accent-color);
-            border-radius: 15px;
-            margin: 0 10px;
-            position: relative;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .toggle-switch::after {
-            content: '';
-            position: absolute;
-            width: 26px;
-            height: 26px;
-            border-radius: 50%;
-            background-color: var(--accent-color);
-            top: 2px;
-            left: 2px;
-            transition: 0.3s;
-        }
-        .toggle-switch.active {
-            background-color: var(--accent-color);
-        }
-        .toggle-switch.active::after {
-            left: 32px;
-            background-color: var(--main-bg-color);
-        }
-        .pricing-plans {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .plan {
-            background-color: var(--secondary-bg-color);
-            border: 1px solid var(--accent-color);
-            border-radius: 10px;
-            padding: 30px;
-            width: 250px;
-            text-align: left;
-            transition: all 0.3s ease;
-        }
-        .plan:hover {
-            box-shadow: 0 0 20px var(--accent-color);
-            transform: translateY(-5px);
-        }
-        .plan h2 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--accent-color);
-        }
-        .plan-price {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-            color: var(--text-color);
-        }
-        .plan-features {
-            list-style-type: none;
-            padding: 0;
-            color: var(--secondary-text-color);
-        }
-        .plan-features li {
-            margin-bottom: 10px;
-        }
-        .plan-features li::before {
-            content: '>';
-            color: var(--accent-color);
-            margin-right: 10px;
-        }
-        .plan-button {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            text-align: center;
-            background-color: var(--accent-color);
-            color: var(--main-bg-color);
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-        .plan-button:hover {
-            background-color: var(--text-color);
-            box-shadow: 0 0 10px var(--accent-color);
         }
 
-        
-        @media screen and (max-width: 768px) {
-          header {
-            flex-direction: column;
-            align-items: center;
-            padding: 1rem 2%;
-          }
-        
-          nav {
-            width: 100%;
-            margin-top: 1rem;
-          }
-        
-          nav ul {
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0;
-            margin: 0;
-            width: 100%;
-          }
-        
-          nav ul li {
-            margin: 0;
-          }
-        
-          nav ul li a {
-            padding: 10px 5px;
-            font-size: 12px;
-            white-space: nowrap;
-          }
-        
-          .hero {
-            padding: 5% 2%;
-            text-align: center;
-          }
-        
-          .hero h1 {
-            font-size: 2.5rem;
-          }
-        
-          .hero p {
-            font-size: 1rem;
-            margin-left: auto;
-            margin-right: auto;
-          }
-        
-          .button-group {
-            flex-direction: column;
-            align-items: center;
-          }
-        
-          .cta-button, .secondary-button {
-            width: 80%;
-            text-align: center;
-          }
-        
-          .cta-button {
-            margin-top: 1rem;
-          }
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+            margin: 0 10px;
         }
-       
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--secondary-bg-color);
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: var(--accent-color);
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: var(--text-color);
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        .pricing-cards {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .pricing-card {
+            background-color: var(--secondary-bg-color);
+            border: 2px solid var(--accent-color);
+            border-radius: 10px;
+            padding: 2rem;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(255, 0, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(255, 0, 255, 0.5);
+        }
+
+        .pricing-card h2 {
+            color: var(--accent-color);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .pricing-card .price {
+            font-size: 2.5rem;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+        }
+
+        .pricing-card ul {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-card ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        @media screen and (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+                padding: 1rem 2%;
+            }
+
+            nav {
+                width: 100%;
+                margin-top: 1rem;
+            }
+
+            nav ul {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0;
+                margin: 0;
+                width: 100%;
+            }
+
+            nav ul li {
+                margin: 0;
+            }
+
+            nav ul li a {
+                padding: 10px 5px;
+                font-size: 12px;
+                white-space: nowrap;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .pricing-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .pricing-card {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
         <a href="index.html">
-        <img src="logos/logo-ghostsecurity.png" alt="Hackers University Logo" class="logo">
+            <img src="logos/logo-ghostsecurity.png" alt="Hackers University Logo" class="logo">
         </a>     
         <nav>
             <ul>
@@ -258,46 +283,52 @@
         <a href="plans.html" class="cta-button">Get Started</a>
     </header>
     <main>
-        <section class="pricing-section">
-            <h1>Pricing & Plans</h1>
-            <div class="billing-toggle">
-                <span>Monthly Billing</span>
-                <div class="toggle-switch" id="billingToggle"></div>
-                <span>Annual Billing</span>
+        <h1>Pricing & Plans</h1>
+        <div class="billing-toggle">
+            <span>Monthly Billing</span>
+            <label class="toggle-switch">
+                <input type="checkbox" id="billing-toggle">
+                <span class="slider"></span>
+            </label>
+            <span>Annual Billing</span>
+        </div>
+        <div class="pricing-cards">
+            <div class="pricing-card">
+                <h2>LITE</h2>
+                <p class="price">$9/month</p>
+                <ul>
+                    <li>Access to all hackers university challenges</li>
+                </ul>
+                <a href="#" class="cta-button">7-DAY FREE TRIAL</a>
             </div>
-            <div class="pricing-plans">
-                <div class="plan">
-                    <h2>LITE</h2>
-                    <p>Access to all hackers university challenges.</p>
-                    <div class="plan-price">$9<span>/ per month</span></div>
-                    <ul class="plan-features">
-                        <li>Hackers University challenges</li>
-                    </ul>
-                    <a href="#" class="plan-button">7-DAY FREE TRIAL</a>
-                </div>
-                <div class="plan">
-                    <h2>PRO</h2>
-                    <p>Start from basics with courses tailored to prepare you to pass an interview for a 6-figure job.</p>
-                    <div class="plan-price">$49<span>/ per month</span></div>
-                    <ul class="plan-features">
-                        <li>Hackers University courses</li>
-                        <li>Hackers University challenges</li>
-                        <li>Hackers University discord</li>
-                    </ul>
-                    <a href="plans.html" class="plan-button">START NOW</a>
-                </div>
-                <!-- Add PROFESSIONAL and ULTIMATE plans here -->
+            <div class="pricing-card">
+                <h2>PRO</h2>
+                <p class="price">$49/month</p>
+                <ul>
+                    <li>Start from basics with courses tailored to prepare you to pass an interview for a 6-figure job</li>
+                    <li>Hackers University courses</li>
+                </ul>
+                <a href="#" class="cta-button">Get Started</a>
             </div>
-        </section>
+        </div>
     </main>
     <footer>
-        <!-- Add footer content -->
+        <!-- Add footer content if needed -->
     </footer>
     <script>
-        const billingToggle = document.getElementById('billingToggle');
-        billingToggle.addEventListener('click', () => {
-            billingToggle.classList.toggle('active');
-            // Add logic here to update pricing for annual billing
+        const billingToggle = document.getElementById('billing-toggle');
+        const priceElements = document.querySelectorAll('.price');
+        
+        billingToggle.addEventListener('change', function() {
+            if (this.checked) {
+                // Annual billing
+                priceElements[0].textContent = '$90/year';
+                priceElements[1].textContent = '$490/year';
+            } else {
+                // Monthly billing
+                priceElements[0].textContent = '$9/month';
+                priceElements[1].textContent = '$49/month';
+            }
         });
     </script>
 </body>
