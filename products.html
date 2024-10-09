@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_package_v0.16/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_package_v0.16/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_package_v0.16/favicon-16x16.png">
+    <link rel="manifest" href="favicon_package_v0.16/site.webmanifest">
+    <link rel="mask-icon" href="favicon_package_v0.16/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap');
+
+        :root {
+            --main-bg-color: #000000;
+            --secondary-bg-color: #0a0e17;
+            --text-color: #00ff00;
+            --secondary-text-color: #008000;
+            --accent-color: #39ff14;
+        }
+
+        body {
+            font-family: 'Source Code Pro', monospace;
+            margin: 0;
+            padding: 0;
+            background-color: var(--main-bg-color);
+            color: var(--text-color);
+        }
+
+        header {
+            background-color: var(--secondary-bg-color);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--accent-color);
+        }
+
+        .logo {
+            height: 70px;
+            width: 70px;
+            filter: hue-rotate(100deg) brightness(1.5);
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: var(--secondary-text-color);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .cta-button {
+            background-color: var(--accent-color);
+            color: var(--main-bg-color);
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: var(--text-color);
+            box-shadow: 0 0 10px var(--accent-color);
+        }
+
+        .center-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .center-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+            text-shadow: 0 0 10px var(--accent-color);
+        }
+
+        .center-content p {
+            font-size: 1.2rem;
+            color: var(--secondary-text-color);
+            max-width: 600px;
+            margin-bottom: 1rem;
+        }
+
+        @media screen and (max-width: 768px) {
+          header {
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem 2%;
+          }
+        
+          nav {
+            width: 100%;
+            margin-top: 1rem;
+          }
+        
+          nav ul {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+          }
+        
+          nav ul li {
+            margin: 0;
+          }
+        
+          nav ul li a {
+            padding: 10px 5px;
+            font-size: 12px;
+            white-space: nowrap;
+          }
+        
+          .hero {
+            padding: 5% 2%;
+            text-align: center;
+          }
+        
+          .hero h1 {
+            font-size: 2.5rem;
+          }
+        
+          .hero p {
+            font-size: 1rem;
+            margin-left: auto;
+            margin-right: auto;
+          }
+        
+          .button-group {
+            flex-direction: column;
+            align-items: center;
+          }
+        
+          .cta-button, .secondary-button {
+            width: 80%;
+            text-align: center;
+          }
+        
+          .cta-button {
+            margin-top: 1rem;
+          }
+        }
+       
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img src="logos/logo-ghostsecurity.png" alt="Hackers University Logo" class="logo">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="plans.html">Plans</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="about.html">Company</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="cta-button">Get Started</a>
+    </header>
+
+    <main>
+        <div class="center-content">
+            <h1>About Hackers University</h1>
+            <p>University does not teach you how to get a job.</p>
+            <p>It barely teaches you anything.</p>
+            <p>Let alone skills that you can ACTUALLY use to go out into the real world and make money.</p>
+            <p>This makes getting jobs nearly impossible. Unless you go learn things on your own.</p>
+            <p>So, what is the point of university?</p>
+            <p>Here we will save you the time and the money you would waste on a 4-year cybersecurity degree by only teaching you the skills you need to know to get a job in the real world and start making a 6-figure salary hacking.</p>
+            <a href="#" class="cta-button">Get Started</a>
+        </div>
+    </main>
+
+    <footer>
+        <!-- Add footer content if needed -->
+    </footer>
+</body>
+</html>
