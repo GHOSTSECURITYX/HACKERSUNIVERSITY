@@ -103,6 +103,31 @@
             margin-bottom: 1rem;
         }
 
+        table {
+            width: 100%;
+            max-width: 800px;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table, th, td {
+            border: 1px solid var(--accent-color);
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--secondary-bg-color);
+            color: var(--accent-color);
+        }
+
+        td {
+            background-color: var(--main-bg-color);
+        }
+
         @media screen and (max-width: 768px) {
           header {
             flex-direction: column;
@@ -134,33 +159,13 @@
             white-space: nowrap;
           }
         
-          .hero {
-            padding: 5% 2%;
-            text-align: center;
-          }
-        
-          .hero h1 {
+          .center-content h1 {
             font-size: 2.5rem;
           }
         
-          .hero p {
-            font-size: 1rem;
-            margin-left: auto;
-            margin-right: auto;
-          }
-        
-          .button-group {
-            flex-direction: column;
-            align-items: center;
-          }
-        
-          .cta-button, .secondary-button {
+          .cta-button {
             width: 80%;
             text-align: center;
-          }
-        
-          .cta-button {
-            margin-top: 1rem;
           }
         }
        
@@ -185,23 +190,42 @@
     <main>
         <div class="center-content">
             <h1>Our Products</h1>
-            <p>LITE Plan Packages</p>
-            <p>  HACKERS INTRO TO LINUX</p>
-            <p>  HACKERS INTRO TO PYTHON</p>
-            <p>  BINARY EXPLOITATION</p>
-            <p>  X86 ASSEMBLY</p>
-            <p>  REVERSING MACHINE CODE</p>
-            <p>  PASSWORD CRACKING</p>
-            <p>  WEB EXPLOITATION</p>
-            <p>  MEMORY FORENSICS</p>
-            <p>  SYSTEM RECONNAISSANCE</p>
-            <p> </p>
-            <p>EXECUTIVE.</p>
-            <p>  REAL WORLD MOBILE MALWARE REVERSING & ANALYSIS</p>
-            <p>  ADVANCED VULNERABILITY RESEARCH TRAINING</p>
-            <p>  COMMERCIAL SOFTWARE EXPLOITATION TRAINING</p>
-            <p>  ROOTKIT ANALYSIS</p>
-            <p>  RESUME & INTERVIEW PREP</p>
+            <h2>LITE Plan Packages</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Course</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>HACKERS INTRO TO LINUX</td></tr>
+                    <tr><td>HACKERS INTRO TO PYTHON</td></tr>
+                    <tr><td>BINARY EXPLOITATION</td></tr>
+                    <tr><td>X86 ASSEMBLY</td></tr>
+                    <tr><td>REVERSING MACHINE CODE</td></tr>
+                    <tr><td>PASSWORD CRACKING</td></tr>
+                    <tr><td>WEB EXPLOITATION</td></tr>
+                    <tr><td>MEMORY FORENSICS</td></tr>
+                    <tr><td>SYSTEM RECONNAISSANCE</td></tr>
+                </tbody>
+            </table>
+
+            <h2>EXECUTIVE Plan Packages</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Course</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>REAL WORLD MOBILE MALWARE REVERSING & ANALYSIS</td></tr>
+                    <tr><td>ADVANCED VULNERABILITY RESEARCH TRAINING</td></tr>
+                    <tr><td>COMMERCIAL SOFTWARE EXPLOITATION TRAINING</td></tr>
+                    <tr><td>ROOTKIT ANALYSIS</td></tr>
+                    <tr><td>RESUME & INTERVIEW PREP</td></tr>
+                </tbody>
+            </table>
+            
             <a href="plans.html" class="cta-button">Pricing</a>
         </div>
     </main>
