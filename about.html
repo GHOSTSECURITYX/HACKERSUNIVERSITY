@@ -12,22 +12,39 @@
     <link rel="mask-icon" href="favicon_package_v0.16/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-
+    
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap');
+
+        :root {
+            --main-bg-color: #000000;
+            --secondary-bg-color: #0a0e17;
+            --text-color: #00ff00;
+            --secondary-text-color: #008000;
+            --accent-color: #39ff14;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Source Code Pro', monospace;
             margin: 0;
             padding: 0;
-            background-color: #0a0e17;
-            color: #ffffff;
+            background-color: var(--main-bg-color);
+            color: var(--text-color);
         }
 
         header {
-            background-color: #0a0e17;
+            background-color: var(--secondary-bg-color);
             padding: 1rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border-bottom: 1px solid var(--accent-color);
+        }
+
+        .logo {
+            height: 70px;
+            width: 70px;
+            filter: hue-rotate(100deg) brightness(1.5);
         }
 
         nav ul {
@@ -37,59 +54,29 @@
         }
 
         nav ul li a {
-            color: #a0a0a0;
+            color: var(--secondary-text-color);
             text-decoration: none;
             font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-color);
         }
 
         .cta-button {
-            background-color: #8cc63f;
-            color: #000000;
+            background-color: var(--accent-color);
+            color: var(--main-bg-color);
             padding: 10px 20px;
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
+            transition: all 0.3s ease;
         }
 
-        .hero {
-            padding: 5% 5% 10%;
-            background: linear-gradient(to right, #0a0e17, #1a2030);
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: #a0a0a0;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .button-group {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .secondary-button {
-            background-color: #2a3040;
-            color: #ffffff;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-
-        .trial-banner {
-            background-color: #1a2030;
-            color: #8cc63f;
-            padding: 10px;
-            text-align: center;
-            font-size: 14px;
+        .cta-button:hover {
+            background-color: var(--text-color);
+            box-shadow: 0 0 10px var(--accent-color);
         }
 
         .center-content {
@@ -98,66 +85,66 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            height: 100vh; /* Adjust based on the size of the section */
+            min-height: 100vh;
+            padding: 2rem;
         }
 
         .center-content h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
+            color: var(--accent-color);
+            text-shadow: 0 0 10px var(--accent-color);
         }
 
         .center-content p {
             font-size: 1.2rem;
-            color: #a0a0a0;
+            color: var(--secondary-text-color);
             max-width: 600px;
+            margin-bottom: 1rem;
         }
 
         @media screen and (max-width: 768px) {
-          header {
-            flex-direction: column;
-            align-items: center;
-            padding: 1rem 2%;
-          }
-        
-          nav {
-            width: 100%;
-            margin-top: 1rem;
-          }
-        
-          nav ul {
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0;
-            margin: 0;
-            width: 100%;
-          }
-        
-          nav ul li {
-            margin: 0;
-          }
-        
-          nav ul li a {
-            padding: 10px 5px;
-            font-size: 12px;
-            white-space: nowrap;
-          }
-        
-          .hero {
-            padding: 5% 2%;
-            text-align: center;
-          }
-        
-          .hero h1 {
-            font-size: 2.5rem;
-          }
+            header {
+                flex-direction: column;
+                align-items: center;
+                padding: 1rem 2%;
+            }
+
+            nav {
+                width: 100%;
+                margin-top: 1rem;
+            }
+
+            nav ul {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0;
+                margin: 0;
+                width: 100%;
+            }
+
+            nav ul li {
+                margin: 0;
+            }
+
+            nav ul li a {
+                padding: 10px 5px;
+                font-size: 12px;
+                white-space: nowrap;
+            }
+
+            .center-content h1 {
+                font-size: 2.5rem;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
         <a href="index.html">
-        <img src="logos/logo-ghostsecurity.png" height="70" width="70" alt="Hackers University Logo">
-        </a> 
+            <img src="logos/logo-ghostsecurity.png" alt="Hackers University Logo" class="logo">
+        </a>
         <nav>
             <ul>
                 <li><a href="#products">Products</a></li>
@@ -167,6 +154,7 @@
                 <li><a href="about.html">Company</a></li>
             </ul>
         </nav>
+        <a href="#" class="cta-button">Get Started</a>
     </header>
 
     <main>
@@ -183,6 +171,7 @@
     </main>
 
     <footer>
+        <!-- Add footer content if needed -->
     </footer>
 </body>
 </html>
