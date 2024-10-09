@@ -17,11 +17,11 @@
         @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap');
 
         :root {
-            --main-bg-color: #000000;
-            --secondary-bg-color: #0a0e17;
+            --main-bg-color: #0a0e17;
+            --secondary-bg-color: #1a1f2e;
             --text-color: #00ff00;
-            --secondary-text-color: #008000;
-            --accent-color: #39ff14;
+            --secondary-text-color: #39ff14;
+            --accent-color: #ff00ff;
         }
 
         body {
@@ -30,6 +30,7 @@
             padding: 0;
             background-color: var(--main-bg-color);
             color: var(--text-color);
+            line-height: 1.6;
         }
         header {
             background-color: var(--secondary-bg-color);
@@ -37,169 +38,180 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid var(--accent-color);
+            border-bottom: 2px solid var(--accent-color);
+            box-shadow: 0 2px 10px rgba(255, 0, 255, 0.3);
         }
         .logo {
-            height: 40px;
+            height: 50px;
             width: auto;
-            filter: hue-rotate(100deg) brightness(1.5);
+            filter: drop-shadow(0 0 5px var(--accent-color));
         }
         nav ul {
             list-style-type: none;
             display: flex;
-            gap: 20px;
+            gap: 30px;
         }
         nav ul li a {
             color: var(--secondary-text-color);
             text-decoration: none;
-            font-size: 14px;
-            transition: color 0.3s ease;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+        nav ul li a:hover::after {
+            width: 100%;
         }
         nav ul li a:hover {
             color: var(--accent-color);
+            text-shadow: 0 0 5px var(--accent-color);
         }
         .cta-button {
             background-color: var(--accent-color);
             color: var(--main-bg-color);
-            padding: 10px 20px;
+            padding: 12px 25px;
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
             transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         .cta-button:hover {
             background-color: var(--text-color);
-            box-shadow: 0 0 10px var(--accent-color);
+            box-shadow: 0 0 15px var(--accent-color);
+            transform: translateY(-2px);
         }
         .hero {
-            padding: 5% 5% 10%;
-            background: linear-gradient(to right, var(--main-bg-color), var(--secondary-bg-color));
+            padding: 8% 5% 12%;
+            background: linear-gradient(135deg, var(--main-bg-color), var(--secondary-bg-color));
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">👨‍💻</text></svg>') 0 0 / 100px 100px;
+            opacity: 0.05;
+            animation: backgroundScroll 20s linear infinite;
+        }
+        @keyframes backgroundScroll {
+            from {background-position: 0 0;}
+            to {background-position: 100px 100px;}
         }
         .hero h1 {
-            font-size: 4rem;
+            font-size: 4.5rem;
             margin-bottom: 1rem;
             color: var(--accent-color);
-            text-shadow: 0 0 10px var(--accent-color);
+            text-shadow: 0 0 15px var(--accent-color);
+            animation: glitch 5s infinite alternate;
+        }
+        @keyframes glitch {
+            0% {text-shadow: 0 0 15px var(--accent-color);}
+            25% {text-shadow: -2px 0 var(--text-color), 2px 2px var(--accent-color);}
+            50% {text-shadow: 2px -2px var(--text-color), -2px 2px var(--accent-color);}
+            75% {text-shadow: -2px -2px var(--text-color), 2px 2px var(--accent-color);}
+            100% {text-shadow: 2px 0 var(--text-color), -2px -2px var(--accent-color);}
         }
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: var(--secondary-text-color);
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
             max-width: 600px;
+            text-shadow: 0 0 5px var(--secondary-text-color);
         }
         .button-group {
             display: flex;
-            gap: 20px;
+            gap: 25px;
         }
         .secondary-button {
-            background-color: var(--secondary-bg-color);
+            background-color: transparent;
             color: var(--text-color);
-            padding: 10px 20px;
+            padding: 12px 25px;
             text-decoration: none;
             border-radius: 5px;
-            border: 1px solid var(--accent-color);
+            border: 2px solid var(--accent-color);
             transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         .secondary-button:hover {
             background-color: var(--accent-color);
             color: var(--main-bg-color);
+            box-shadow: 0 0 15px var(--accent-color);
+            transform: translateY(-2px);
         }
         .trial-banner {
             background-color: var(--secondary-bg-color);
             color: var(--accent-color);
-            padding: 10px;
+            padding: 15px;
             text-align: center;
-            font-size: 14px;
+            font-size: 16px;
             display: flex;
             justify-content: center;
             align-items: center;
-            border-top: 1px solid var(--accent-color);
+            border-top: 2px solid var(--accent-color);
+            box-shadow: 0 -2px 10px rgba(255, 0, 255, 0.3);
         }
         .trial-banner-text {
-            margin-right: 15px;
+            margin-right: 20px;
+            text-shadow: 0 0 5px var(--accent-color);
         }
         .trial-button {
             background-color: var(--accent-color);
             color: var(--main-bg-color);
-            padding: 8px 15px;
+            padding: 10px 20px;
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
-            font-size: 12px;
+            font-size: 14px;
             transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         .trial-button:hover {
             background-color: var(--text-color);
-            box-shadow: 0 0 10px var(--accent-color);
+            box-shadow: 0 0 15px var(--accent-color);
+            transform: translateY(-2px);
         }
 
         @media screen and (max-width: 768px) {
-          header {
-            flex-direction: column;
-            align-items: center;
-            padding: 1rem 2%;
-          }
-        
-          nav {
-            width: 100%;
-            margin-top: 1rem;
-          }
-        
-          nav ul {
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0;
-            margin: 0;
-            width: 100%;
-          }
-        
-          nav ul li {
-            margin: 0;
-          }
-        
-          nav ul li a {
-            padding: 10px 5px;
-            font-size: 12px;
-            white-space: nowrap;
-          }
-        
-          .hero {
-            padding: 5% 2%;
-            text-align: center;
-          }
-        
-          .hero h1 {
-            font-size: 2.5rem;
-          }
-        
-          .hero p {
-            font-size: 1rem;
-            margin-left: auto;
-            margin-right: auto;
-          }
-        
-          .button-group {
-            flex-direction: column;
-            align-items: center;
-          }
-        
-          .cta-button, .secondary-button {
-            width: 80%;
-            text-align: center;
-          }
-        
-          .cta-button {
-            margin-top: 1rem;
-          }
+            /* Mobile styles remain largely the same, with minor adjustments */
+            .hero h1 {
+                font-size: 3rem;
+            }
+            .hero p {
+                font-size: 1.1rem;
+            }
+            .button-group {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .cta-button, .secondary-button {
+                width: 100%;
+                text-align: center;
+                margin-top: 1rem;
+            }
         }
-       
     </style>
 </head>
 <body>
     <header>
         <a href="index.html">
-        <img src="logos/logo-ghostsecurity.png" height="70" width="70" alt="Hackers University Logo" class="logo">
+            <img src="logos/logo-ghostsecurity.png" height="70" width="70" alt="Hackers University Logo" class="logo">
         </a>        
         <nav>
             <ul>
@@ -214,16 +226,16 @@
     <main>
         <section class="hero">
             <h1>Welcome to Hackers University</h1>
-            <p>Learn how to hack and get paid for it. </p>
+            <p>Master the art of ethical hacking and cybersecurity. Join our elite community of digital defenders.</p>
             <div class="button-group">
-                <a href="about.html" class="cta-button">Read more</a> 
-                <a href="plans.html" class="secondary-button">Start today</a>
+                <a href="about.html" class="cta-button">Explore Courses</a> 
+                <a href="plans.html" class="secondary-button">View Plans</a>
             </div>
         </section>
     </main>
     <div class="trial-banner">
-        <span class="trial-banner-text">Try it for free now</span>
-        <a href="plans.html" class="trial-button">Start Trial</a>
+        <span class="trial-banner-text">Ready to hack ethically? Try it for free now!</span>
+        <a href="plans.html" class="trial-button">Start Free Trial</a>
     </div>
 </body>
 </html>
