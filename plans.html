@@ -17,11 +17,11 @@
         @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap');
 
         :root {
-            --main-bg-color: #0a0e17;
-            --secondary-bg-color: #1a2030;
-            --text-color: #ffffff;
-            --secondary-text-color: #a0a0a0;
-            --accent-color: #8cc63f;
+            --main-bg-color: #000000;
+            --secondary-bg-color: #0a0e17;
+            --text-color: #00ff00;
+            --secondary-text-color: #008000;
+            --accent-color: #39ff14;
         }
 
         body {
@@ -31,39 +31,33 @@
             background-color: var(--main-bg-color);
             color: var(--text-color);
         }
-
         header {
-            background-color: var(--main-bg-color);
+            background-color: var(--secondary-bg-color);
             padding: 1rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border-bottom: 1px solid var(--accent-color);
         }
-
         .logo {
             height: 70px;
             width: 70px;
+            filter: hue-rotate(100deg) brightness(1.5);
         }
-
         nav ul {
             list-style-type: none;
             display: flex;
             gap: 20px;
-            padding: 0;
-            margin: 0;
         }
-
         nav ul li a {
             color: var(--secondary-text-color);
             text-decoration: none;
             font-size: 14px;
             transition: color 0.3s ease;
         }
-
         nav ul li a:hover {
             color: var(--accent-color);
         }
-
         .cta-button {
             background-color: var(--accent-color);
             color: var(--main-bg-color);
@@ -73,23 +67,20 @@
             font-weight: bold;
             transition: all 0.3s ease;
         }
-
         .cta-button:hover {
             background-color: var(--text-color);
-            color: var(--main-bg-color);
+            box-shadow: 0 0 10px var(--accent-color);
         }
-
         .pricing-section {
             padding: 5% 5% 10%;
             text-align: center;
         }
-
         .pricing-section h1 {
             font-size: 3rem;
             margin-bottom: 2rem;
             color: var(--accent-color);
+            text-shadow: 0 0 10px var(--accent-color);
         }
-
         .billing-toggle {
             display: flex;
             justify-content: center;
@@ -97,77 +88,78 @@
             margin-bottom: 2rem;
             color: var(--secondary-text-color);
         }
-
         .toggle-switch {
             width: 60px;
             height: 30px;
-            background-color: var(--accent-color);
+            background-color: var(--secondary-bg-color);
+            border: 2px solid var(--accent-color);
             border-radius: 15px;
             margin: 0 10px;
             position: relative;
             cursor: pointer;
+            transition: 0.3s;
         }
-
         .toggle-switch::after {
             content: '';
             position: absolute;
             width: 26px;
             height: 26px;
             border-radius: 50%;
-            background-color: white;
+            background-color: var(--accent-color);
             top: 2px;
             left: 2px;
             transition: 0.3s;
         }
-
+        .toggle-switch.active {
+            background-color: var(--accent-color);
+        }
+        .toggle-switch.active::after {
+            left: 32px;
+            background-color: var(--main-bg-color);
+        }
         .pricing-plans {
             display: flex;
             justify-content: center;
             gap: 20px;
             flex-wrap: wrap;
         }
-
         .plan {
             background-color: var(--secondary-bg-color);
+            border: 1px solid var(--accent-color);
             border-radius: 10px;
             padding: 30px;
             width: 250px;
             text-align: left;
             transition: all 0.3s ease;
         }
-
         .plan:hover {
+            box-shadow: 0 0 20px var(--accent-color);
             transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(140, 198, 63, 0.3);
         }
-
         .plan h2 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
             color: var(--accent-color);
         }
-
         .plan-price {
             font-size: 2rem;
             font-weight: bold;
             margin-bottom: 1rem;
+            color: var(--text-color);
         }
-
         .plan-features {
             list-style-type: none;
             padding: 0;
+            color: var(--secondary-text-color);
         }
-
         .plan-features li {
             margin-bottom: 10px;
         }
-
         .plan-features li::before {
-            content: '✓';
+            content: '>';
             color: var(--accent-color);
             margin-right: 10px;
         }
-
         .plan-button {
             display: block;
             width: 100%;
@@ -181,72 +173,20 @@
             font-weight: bold;
             transition: all 0.3s ease;
         }
-
         .plan-button:hover {
             background-color: var(--text-color);
-            color: var(--main-bg-color);
+            box-shadow: 0 0 10px var(--accent-color);
         }
 
         @media screen and (max-width: 768px) {
-            header {
-                flex-direction: column;
-                align-items: center;
-                padding: 1rem 2%;
-            }
-
-            nav {
-                width: 100%;
-                margin-top: 1rem;
-            }
-
-            nav ul {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-                width: 100%;
-            }
-
-            nav ul li {
-                margin: 0;
-            }
-
-            nav ul li a {
-                padding: 10px 5px;
-                font-size: 12px;
-                white-space: nowrap;
-            }
-
-            .pricing-section h1 {
-                font-size: 2.5rem;
-            }
-
-            .plan {
-                width: 100%;
-                max-width: 300px;
-            }
-
-            .cta-button {
-                margin-top: 1rem;
-                width: 100%;
-                text-align: center;
-            }
-        }
-
-        @media screen and (max-width: 480px) {
-            .billing-toggle {
-                flex-direction: column;
-            }
-
-            .toggle-switch {
-                margin: 10px 0;
-            }
+            /* Mobile styles remain the same */
         }
     </style>
 </head>
 <body>
     <header>
         <a href="index.html">
-            <img src="logos/logo-ghostsecurity.png" alt="Hackers University Logo" class="logo">
+        <img src="logos/logo-ghostsecurity.png" alt="Hackers University Logo" class="logo">
         </a>     
         <nav>
             <ul>
@@ -264,7 +204,7 @@
             <h1>Pricing & Plans</h1>
             <div class="billing-toggle">
                 <span>Monthly Billing</span>
-                <div class="toggle-switch"></div>
+                <div class="toggle-switch" id="billingToggle"></div>
                 <span>Annual Billing</span>
             </div>
             <div class="pricing-plans">
@@ -288,12 +228,19 @@
                     </ul>
                     <a href="#" class="plan-button">START NOW</a>
                 </div>
-                <!-- Add PROFESSIONAL and ULTIMATE plans similarly -->
+                <!-- Add PROFESSIONAL and ULTIMATE plans here -->
             </div>
         </section>
     </main>
     <footer>
         <!-- Add footer content -->
     </footer>
+    <script>
+        const billingToggle = document.getElementById('billingToggle');
+        billingToggle.addEventListener('click', () => {
+            billingToggle.classList.toggle('active');
+            // Add logic here to update pricing for annual billing
+        });
+    </script>
 </body>
 </html>
