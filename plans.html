@@ -178,8 +178,60 @@
             box-shadow: 0 0 10px var(--accent-color);
         }
 
+        
         @media screen and (max-width: 768px) {
-            /* Mobile styles remain the same */
+            header {
+                flex-direction: column;
+                align-items: center;
+                padding: 1rem 2%;
+            }
+
+            nav {
+                width: 100%;
+                margin-top: 1rem;
+            }
+
+            nav ul {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+            }
+
+            nav ul li {
+                margin: 0;
+            }
+
+            nav ul li a {
+                padding: 10px 5px;
+                font-size: 12px;
+                white-space: nowrap;
+            }
+
+            .pricing-section h1 {
+                font-size: 2.5rem;
+            }
+
+            .plan {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .cta-button {
+                margin-top: 1rem;
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .billing-toggle {
+                flex-direction: column;
+            }
+
+            .toggle-switch {
+                margin: 10px 0;
+            }
         }
     </style>
 </head>
